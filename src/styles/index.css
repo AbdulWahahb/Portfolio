@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f7fc; --surface: #ffffff; --ink: #111a2e; --muted: #4a5671;
+  --line: #d8deec; --accent: #2a58c8; --gold: #8f5b00; --ok: #17803d;
+}
+.dark {
+  --bg: #0d1322; --surface: #141c31; --ink: #e8ecf6; --muted: #9aa8c4;
+  --line: #26314c; --accent: #7ba3ff; --gold: #f0b429; --ok: #4ade80;
+}
+@theme inline {
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-ink: var(--ink);
+  --color-muted: var(--muted); --color-line: var(--line); --color-accent: var(--accent);
+  --color-gold: var(--gold); --color-ok: var(--ok);
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+html { scroll-behavior: smooth; color-scheme: light; }
+html.dark { color-scheme: dark; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); overflow-x: hidden; }
+[id] { scroll-margin-top: 5rem; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.atmosphere {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(40rem 24rem at -5% 30%, color-mix(in srgb, var(--gold) 8%, transparent), transparent 70%);
+}
+.grid-bg {
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%);
+  opacity: .5;
+}
+.flow-line {
+  width: 2px; height: 2.5rem; margin-inline: auto;
+  background-image: linear-gradient(var(--accent) 50%, transparent 50%);
+  background-size: 2px 10px; animation: flow 0.8s linear infinite;
+}
+@keyframes flow { to { background-position: 0 10px; } }
+@media (prefers-reduced-motion: reduce) { .flow-line { animation: none; } }
