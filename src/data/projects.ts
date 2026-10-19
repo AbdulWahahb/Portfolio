@@ -1,5 +1,5 @@
 import type { Project } from "../types";
-import accountingImage from "../public/images/dashbord.png";
+import accountingImage from "../../public/images/dashbord.png";
 
 export const projects: Project[] = [
   {

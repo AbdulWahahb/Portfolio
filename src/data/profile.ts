@@ -14,7 +14,7 @@ export const profile: Profile = {
   // TODO: add your LinkedIn URL, e.g. 'https://www.linkedin.com/in/your-handle'. Leave null to hide.
   linkedin: "https://www.linkedin.com/in/abdulwahab-rahimi-3857a6265",
   // TODO: put your CV in /public/resume.pdf and set to '/resume.pdf'. Leave null to hide the button.
-  resumeUrl: null,
+  resumeUrl: "/resume.pdf",
 };
 
 export const engineeringPrinciples = [
